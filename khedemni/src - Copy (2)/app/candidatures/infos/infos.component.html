@@ -1,0 +1,63 @@
+<div *ngIf="data">
+    <h1 class="text-primary">LES INFORMATIONS DU CANDIDAT</h1>
+    <br>
+
+        <div>
+            <div class="text-info">Nom</div>
+            {{data.can.firstname}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Prenom</div>
+            {{data.can.lastname}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Email</div>
+            {{data.can.email}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Tel:</div>
+            {{data.can.phone}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Skills</div>
+            {{data.can.skills}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Skills Requis</div>
+            {{data.offre.skills}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Compatibilité avec le poste</div>
+            {{data.compatibility}} % 
+        </div> <br>
+
+        <div class="progress progress-sm mr-2">
+            <div class="progress-bar"
+                [class.bg-warning]="data.compatibility >= 40 && data.compatibility <= 60"
+                [class.bg-primary]="data.compatibilit >= 60 && data.compatibility <= 80"
+                [class.bg-success]="data.compatibility > 80"
+                [style.width.%]="data.compatibility" 
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br><br>
+
+        
+        
+
+
+   <hr>
+<button class="btn btn-primary" (click)="openResume()">Examiner le CV</button>
+
+</div>

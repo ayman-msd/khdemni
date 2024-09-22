@@ -1,0 +1,20 @@
+<div *ngIf="data">
+    <h1>{{ data.title }}</h1>
+    <br>
+    <p class="text-primary">DESCRIPTION: </p><p>{{ data.desc }}</p> <br>
+    <p class="text-primary">COMPETENCES DEMANDEES: </p> <p>{{ data.skills }}</p><br>
+    <p class="text-primary">VOTRE COMPATIBILTE AVEC CE POSTE: </p>
+
+    <div class="progress progress-sm mr-2">
+        <div class="progress-bar"
+            [class.bg-danger]="compatibility() < 40"
+            [class.bg-warning]="compatibility() >= 40 && compatibility() <= 70"
+            [class.bg-primary]="compatibility() >= 70 && compatibility() <= 90"
+            [class.bg-success]="compatibility() > 91"
+            [style.width.%]="compatibility()" 
+            aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <br><br><br>
+<button class="btn btn-primary" (click)="postuler()">Postuler</button>
+</div>

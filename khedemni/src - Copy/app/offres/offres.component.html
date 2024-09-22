@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--<nav id="navbar" class="navbar fixed-top container-fluid mb-5">
+    <div class="navbar-container">
+      <div class="logo-container">
+        <a href="#hero">
+          <img src="../../assets/logo.png" alt="logo" style="width: 15%;"></a>
+      </div>
+      <div class="nav-links-container">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto mt-2" href="signin">Get Started</a></li>
+        </ul>
+      </div>
+    </div>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+  </nav>-->
+</head>
+
+<body class="d-flex align-items-center justify-content-center vh-100" style="background-image: url('../../assets/back.png'); background-size :cover">
+  <div class = "container">
+  <div class="card shadow mb-4 mt-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <tbody>
+                    <div class="card container" *ngFor="let offre of paginatedOffres" (click)="showOfferPopup(offre)">
+                        <a class="card1">
+                            <p>{{ offre.title }}</p>
+                            <p class="small">{{ offre.desc }}</p>
+                            <div class="go-corner">
+                                <div class="go-arrow">
+                                    →
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1">Précedent</button>
+            <button [disabled]="currentPage * itemsPerPage >= offresarray.length" (click)="currentPage = currentPage + 1">Suivant</button>
+        </div>
+    </div>
+</div>
+</div>
+
+  
+      
+
+</body>
+</html>

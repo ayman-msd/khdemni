@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body class="d-flex align-items-center justify-content-center vh-100" style="background-image: url('../../assets/back.png'); background-size :cover">
+  <nav id="navbar" class="navbar fixed-top container-fluid">
+    <div class="navbar-container">
+      <div class="logo-container">
+        <a href="home">
+          <img src="../../assets/logo.png" alt="logo" style="width: 15%;"></a>
+      </div>
+      <div class="nav-links-container">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto mt-2" href="signin">Get Started</a></li>
+        </ul>
+      </div>
+    </div>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+  </nav>
+  <form class="form" #signupForm="ngForm">
+    <h1 class="text-center">SIGNUP</h1>
+    <div class="row">
+        <div class="inputForm col-6">
+            <input type="text" class="input" placeholder="First Name" [(ngModel)]="signupobj.first_name" name="first_name" required>
+        </div>
+        <div class="inputForm col-6 ">
+            <input type="text" class="input" placeholder="Last Name" [(ngModel)]="signupobj.last_name" name="last_name" required>
+        </div>
+    </div>
+
+    <div class="inputForm">
+        <input type="email" class="input" placeholder="Enter your Email" [(ngModel)]="signupobj.email" name="email" required>
+    </div>
+
+    <div class="inputForm">
+        <input type="tel" class="input" placeholder="Enter your Phone" [(ngModel)]="signupobj.phone" name="phone" required>
+    </div>
+
+    <div class="inputForm">
+        <input type="password" class="input" placeholder="Enter your Password" [(ngModel)]="signupobj.password" name="password" required>
+    </div>
+
+    <button class="button-submit" [disabled]="!signupForm.form.valid" (click)="signup()">Sign Up</button>
+    <p class="p">Already Registred?<span class="span"></span><a href="/signin">Sign In</a>
+    
+
+</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<div *ngIf="data">
+    <h1 class="text-primary">LES INFORMATIONS DU CANDIDAT</h1>
+    <br>
+
+        <div>
+            <div class="text-info">Nom</div>
+            {{data.firstname}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Prenom</div>
+            {{data.lastname}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Email</div>
+            {{data.email}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Tel:</div>
+            {{data.phone}} 
+            <br><br>
+        </div>
+
+        <div>
+            <div class="text-info">Skills</div>
+            {{data.skills}} 
+            <br>
+        </div> <br>
+
+        
+        <br>
+
+
+   <hr>
+<button class="btn btn-primary" (click)="openResume()">Examiner le CV</button>
+</div>
